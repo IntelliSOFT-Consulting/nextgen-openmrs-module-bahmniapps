@@ -18,6 +18,10 @@ angular.module('bahmni.clinical')
             $scope.consultation.consultationNote.observationDateTime = null;
         };
 
+        $scope.sendConsultationNote = function() {
+            console.log($scope.consultation.consultationNote.value)
+        }
+
         var groupObservations = function () {
             var allObservations = $scope.consultation.observations;
             allObservations = _.filter(allObservations, function (obs) {
