@@ -272,7 +272,7 @@
         <h2 class="section-title">{{ 'CONSULTATION_TAB_CONSULTATION_NOTES_LABEL'|translate }}</h2>
         <textarea ng-model="consultation.consultationNote.value" ng-change="onNoteChanged()"
                   placeholder="{{ 'CLINICAL_ENTER_NOTES_PLACEHOLDER'|translate }} " rows="6" msd-elastic></textarea>
-        <button style="margin:.5rem" ng-disabled="!consultation.consultationNote.value" ng-click="sendConsultationNote()">Send Email</button>
+        <button id="send-consultation-note" ng-disabled="!consultation.consultationNote.value" ng-click="sendConsultationNote()">Send Email</button>
     </section>
 
 </article>
