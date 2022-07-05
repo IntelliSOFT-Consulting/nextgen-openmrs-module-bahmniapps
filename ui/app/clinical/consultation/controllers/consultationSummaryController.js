@@ -19,7 +19,20 @@ angular.module('bahmni.clinical')
         };
 
         $scope.sendConsultationNote = function() {
-            console.log($scope.consultation.consultationNote.value)
+            let consultation = $scope.consultation;
+            let patientResponse = {}
+            patientResponse.diagnoses = []
+            consultation.savedDiagnosesFromCurrentEncounter.forEach((savedDiagnosis,index) => {
+                let singleDiagnosis = {}
+                singleDiagnosis['diagnosisName'] = savedDiagnosis.codedAnswer.name;
+                singleDiagnosis['certainty'] = savedDiagnosis.certainty;
+                singleDiagnosis['date'] = savedDiagnosis.diagnosisDateTime;
+                singleDiagnosis['order'] = savedDiagnosis.order;
+                singleDiagnosis['labOperator'] = savedDiagnosis.creatorName;
+                patientResponse.diagnoses.push(singleDiagnosis)
+            })
+            patientResponse['treatmentPlan'] = consultation.consultationNote.value
+            console.log(patientResponse)
         }
 
         var groupObservations = function () {
