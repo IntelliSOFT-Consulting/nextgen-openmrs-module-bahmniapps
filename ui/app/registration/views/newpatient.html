@@ -5,6 +5,18 @@
                 <legend class="registraion_legend first-registraion_legend">
                     <span class="mylegend"><strong>{{::'REGISTRATION_LABEL_NEW_PATIENT' | translate}}</strong></span>
                 </legend>
+                <section>
+                    <article class="form-field">
+                    <div class="field-attribute">
+                        <label class="control-lable" for="selectLocation">
+                            Registration Location 
+                        </label>
+                    </div>
+                    <div class="field-value" id="currentLocations">
+                     <input type="text" ng-model="patient['registrationLocation']" disabled="true">
+                    </div>
+                </article>
+                </section>
                 <section class="clearfix">
                     <div class="photo-container-wrapper" ng-if="!disablePhotoCapture">
                         <span class="pull-right photo-container">
