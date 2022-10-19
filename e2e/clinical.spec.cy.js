@@ -5,7 +5,7 @@ describe("Test components on this page",()=>{
 
   })
   
- /* it("test1-  tests if the clinical tile is clickable",()=>{
+  it("test1-  tests if the clinical tile is clickable",()=>{
     cy.wait(5000)
   
     cy.get('.fa-stethoscope').click()
@@ -88,8 +88,8 @@ describe("Test components on this page",()=>{
     cy.get('.col3 > .form-field').type("2022/10/18")
     cy.get('.confirm').click()
     
-  })*/
-  /*it("test6-Accessing the treatment plan tab",()=>{
+  })
+  it("test6-Accessing the treatment plan tab",()=>{
    
     cy.get('.fa-stethoscope').click()
   
@@ -105,8 +105,8 @@ describe("Test components on this page",()=>{
     cy.get('.ng-pristine').type("The patient has shown some adjustment since introduction to the program")
     cy.get('.confirm').click()
 
-  })*/
-    /*it("test7-Accessing the orders tab, and searching items then making an order",()=>{
+  })
+    it("test7-Accessing the orders tab, and searching items then making an order",()=>{
       cy.get('.fa-stethoscope').click()
   
       cy.get('.tabs > ul > :nth-child(1) > a').click()
@@ -218,7 +218,7 @@ describe("Test components on this page",()=>{
 
       
 
-    })*/
+    })
      it("test8-Accessing the medication tab",()=>{
    
         cy.get('.fa-stethoscope').click()
@@ -238,10 +238,17 @@ describe("Test components on this page",()=>{
         cy.get('#uniform-dose-unit').select("mg")
         cy.get("#frequency").select("Once a day")
         cy.get("#route").select("Oral")
-        //cy.get('#start-date').type("18/09/2022")
         cy.get("#duration").type("8")
+        cy.get("#duration-unit").select("Week(s)")
+        cy.get('#total-quantity-unit').select("ml")
+        cy.get("#SOS").click()
+        cy.get('#instructions').select("Before meals")
+        cy.get("#additional-instructions").type("Watch out for any danger signs")
+        cy.get('.add-drug-btn').click()
+        cy.get('[ng-click="edit(newTreatment, $index)"] > .fa').click()
+        cy.wait(500)
         
-      })/*
+      })
     it("test9-Accessing the diagnosis tab",()=>{
    
       cy.get('.fa-stethoscope').click()
@@ -264,6 +271,6 @@ describe("Test components on this page",()=>{
         cy.wait(2000)
         cy.get('.btn--left').click()
         cy.wait(2500)
-      })*/
+      })
 })
    
