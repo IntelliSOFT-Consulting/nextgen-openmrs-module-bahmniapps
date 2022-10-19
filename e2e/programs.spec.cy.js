@@ -4,8 +4,6 @@ describe("Test components on this page",()=>{
     cy.dashboard();
   })
   it("checks if the Registration button is clickable and  fucntional",()=>{
-    //cy.get("bahmni\.programs").click()
-    cy.get('#bahmni\.programs').click()
-    cy.wait(5000)
+    cy.get('.icon-bahmni-program').click()
     })
   })
